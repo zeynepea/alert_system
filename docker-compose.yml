@@ -1,0 +1,28 @@
+version: "3.1"
+
+services:
+  db:
+    container_name: postgres_alerts
+    image: postgres:11
+    restart: unless-stopped
+    volumes:
+      - postgres_alerts:/var/lib/postgresql/data
+    ports:
+      - "5432:54320"
+
+
+  api:
+    build:
+      context: ./webside/
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./webside/
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api

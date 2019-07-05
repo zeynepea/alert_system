@@ -1,0 +1,35 @@
+.head {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    font-family: Helvetica;
+    padding: 1%;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 25px;
+    margin-top:  1%;
+    margin-bottom: 0.5%;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+
+  .login_signup {
+    background-color: #f1f1f1;
+    float: left;
+    padding: 8%;
+    border-radius: 25px;
+    margin-top:  4%;
+    margin-right:30% ;
+    margin-left:30% ;
+    height: 50%;
+    width: 40%;  
+  }
+  
+  button{
+      margin-right : 5px;
+      margin-left: 5px;
+      background: #f1f1f1;
+      border: none;
+      text-decoration: underline
+  }
+
+

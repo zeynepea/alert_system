@@ -1,0 +1,30 @@
+.header {
+  overflow: hidden;
+  background-color: lightslategray;
+  font-family: Helvetica;
+  padding: 1%;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+
+  margin-top:  1%;
+  margin-bottom: 0.5%
+}
+.xx{
+  text-decoration: none;
+  color: white
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #f1f1f1;
+  text-align: center;
+  color: lightslategray
+}
+
+
+

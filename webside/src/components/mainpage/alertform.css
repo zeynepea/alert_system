@@ -1,0 +1,55 @@
+.Form{
+    font-family: Helvetica;
+    font-size: 15px;
+}
+
+.Error {
+    border: 2px solid red;
+    width: 40%
+}
+
+input[type=text], select,input[type=number]  {
+    width: 100%;
+    border: none;
+    padding: 2%;
+    background:white;
+    outline: none;
+  }
+ 
+  
+  input[type=submit] {
+    width: 100%;
+    background-color: lightslategray;
+    color: white;
+    padding: 2%;
+    border: none;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: white;
+    color: lightslategray
+  }
+  
+  .custom{
+    background-color: white;
+    padding: 1%;
+    padding-bottom: 0%;
+    margin: 2%
+  }
+  .custom:hover{
+    color: blue;
+    border-bottom:  2px solid blue 
+  }
+  .custom2{
+    font-size: 80%;
+    font-family: Helvetica;
+    background-color: lightslategray;
+    padding: 2%;
+    margin: 2%
+  }
+  .custom2:hover{
+    background-color: white;
+    color: lightslategray
+  }
+  
