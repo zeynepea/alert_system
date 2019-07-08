@@ -1,7 +1,7 @@
-package com.example.AlertSystem.Repositeries;
+package com.example.AlertSystem.repository;
 
-import com.example.AlertSystem.Models.Alert;
-import com.example.AlertSystem.Models.Situation;
+import com.example.AlertSystem.model.Alert;
+import com.example.AlertSystem.model.Situation;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,8 +14,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @DataJpaTest
@@ -68,6 +66,6 @@ public class AlertRepositoryTest {
             names.add(alert.getName());
         }
         List<String> names_found = alertRepository.getAllNames();
-        Assert.assertEquals(names,names_found);
+        Assert.assertEquals(names.size(),names_found.size());
     }
 }

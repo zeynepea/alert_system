@@ -1,18 +1,14 @@
-package com.example.AlertSystem.Models;
+package com.example.AlertSystem.model;
 
 import lombok.*;
-import org.hibernate.annotations.JoinColumnOrFormula;
 import org.hibernate.validator.constraints.URL;
 import org.springframework.http.HttpMethod;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.List;
-import java.util.Objects;
-import java.util.Set;
 
 
 @Entity
@@ -45,7 +41,7 @@ public class Alert {
     private Long timeLeft;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name="situation_id")
+    @JoinColumn(name="alert_id")
     private List<Situation> situations;
 
 }

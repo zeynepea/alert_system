@@ -1,9 +1,8 @@
-package com.example.AlertSystem.Controllers;
+package com.example.AlertSystem.controller;
 
-import com.example.AlertSystem.Models.Alert;
-import com.example.AlertSystem.Services.AlertService;
+import com.example.AlertSystem.model.Alert;
+import com.example.AlertSystem.service.AlertService;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.*;

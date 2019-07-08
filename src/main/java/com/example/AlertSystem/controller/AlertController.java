@@ -1,11 +1,9 @@
-package com.example.AlertSystem.Controllers;
+package com.example.AlertSystem.controller;
 
 
-import com.example.AlertSystem.Models.Alert;
-import com.example.AlertSystem.Models.Situation;
-import com.example.AlertSystem.Services.AlertService;
+import com.example.AlertSystem.model.Alert;
+import com.example.AlertSystem.service.AlertService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -13,8 +11,9 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.*;
-import java.util.concurrent.ExecutionException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController

@@ -1,6 +1,6 @@
-package com.example.AlertSystem.Controllers;
+package com.example.AlertSystem.controller;
 
-import com.example.AlertSystem.Services.AlertService;
+import com.example.AlertSystem.service.AlertService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,7 +14,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 

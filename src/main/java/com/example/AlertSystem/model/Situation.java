@@ -1,4 +1,4 @@
-package com.example.AlertSystem.Models;
+package com.example.AlertSystem.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

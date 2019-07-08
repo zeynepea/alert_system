@@ -1,21 +1,17 @@
-package com.example.AlertSystem.Services;
+package com.example.AlertSystem.service;
 
-import com.example.AlertSystem.Controllers.AlertController;
-import com.example.AlertSystem.Models.Alert;
-import com.example.AlertSystem.Repositeries.AlertRepository;
+import com.example.AlertSystem.model.Alert;
+import com.example.AlertSystem.repository.AlertRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.*;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.http.HttpMethod;
-import org.springframework.jmx.export.annotation.ManagedOperation;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -47,9 +43,6 @@ public class ScheduledTaskTest {
         verify(alertRepository, Mockito.times(1)).findAll();
         verify(asyncTask, Mockito.times(1)).sendingReq(any());
         verify(alertRepository,Mockito.times(1) ).save(any());
-
-
-
     }
 
 

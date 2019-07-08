@@ -1,9 +1,10 @@
-package com.example.AlertSystem.Services;
+package com.example.AlertSystem.service;
 
-import com.example.AlertSystem.Models.Alert;
-import com.example.AlertSystem.Repositeries.AlertRepository;
+import com.example.AlertSystem.model.Alert;
+import com.example.AlertSystem.repository.AlertRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
 import java.util.*;
 
 
@@ -11,7 +12,7 @@ import java.util.*;
 @RequiredArgsConstructor
 public class AlertService {
 
-    final AlertRepository alertRepository;
+    private final AlertRepository alertRepository;
 
 
     public void addAlert(final Alert alert) {
@@ -19,11 +20,11 @@ public class AlertService {
     }
 
 
-    public List<Alert> getAlertByName(String name){
+    public List<Alert> getAlertByName(String name) {
         return alertRepository.findByName(name);
     }
 
-    public List<Alert> getAlerts(){
+    public List<Alert> getAlerts() {
 
         return alertRepository.findAll();
     }
@@ -36,7 +37,7 @@ public class AlertService {
 
     }
 
-    public Long deleteAlert(String name){
+    public Long deleteAlert(String name) {
         return alertRepository.deleteByName(name);
     }
 }

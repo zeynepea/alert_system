@@ -1,7 +1,7 @@
-package com.example.AlertSystem.Services;
+package com.example.AlertSystem.service;
 
-import com.example.AlertSystem.Models.Alert;
-import com.example.AlertSystem.Repositeries.AlertRepository;
+import com.example.AlertSystem.model.Alert;
+import com.example.AlertSystem.repository.AlertRepository;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,13 +11,11 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 

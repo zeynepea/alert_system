@@ -1,24 +1,20 @@
-package com.example.AlertSystem.Services;
+package com.example.AlertSystem.service;
 
-import com.example.AlertSystem.Models.Alert;
-import com.example.AlertSystem.Repositeries.AlertRepository;
-import org.hibernate.mapping.Any;
-import org.junit.Assert;
+import com.example.AlertSystem.model.Alert;
+import com.example.AlertSystem.repository.AlertRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.*;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.*;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-import java.net.URI;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
-import static org.junit.Assert.*;
-import static org.mockito.ArgumentMatchers.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 

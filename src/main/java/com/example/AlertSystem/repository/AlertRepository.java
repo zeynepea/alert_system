@@ -1,6 +1,6 @@
-package com.example.AlertSystem.Repositeries;
+package com.example.AlertSystem.repository;
 
-import com.example.AlertSystem.Models.Alert;
+import com.example.AlertSystem.model.Alert;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

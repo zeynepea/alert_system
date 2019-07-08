@@ -1,7 +1,7 @@
-package com.example.AlertSystem.Services;
+package com.example.AlertSystem.service;
 
-import com.example.AlertSystem.Models.Alert;
-import com.example.AlertSystem.Repositeries.AlertRepository;
+import com.example.AlertSystem.model.Alert;
+import com.example.AlertSystem.repository.AlertRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;

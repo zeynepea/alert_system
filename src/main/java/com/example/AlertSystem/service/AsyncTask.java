@@ -1,9 +1,9 @@
-package com.example.AlertSystem.Services;
+package com.example.AlertSystem.service;
 
 
-import com.example.AlertSystem.Models.Alert;
-import com.example.AlertSystem.Models.Situation;
-import com.example.AlertSystem.Repositeries.AlertRepository;
+import com.example.AlertSystem.model.Alert;
+import com.example.AlertSystem.model.Situation;
+import com.example.AlertSystem.repository.AlertRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Async;
