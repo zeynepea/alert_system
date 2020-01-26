@@ -15,7 +15,10 @@ class Graphics extends Component {
                     };
     }
     setSituation(){
-        axios.get('http://localhost:8080/alerts/'+this.props.match.params.name)
+        axios.get('http://localhost:8080/alerts/'+
+                    localStorage.getItem("username") + '/' +
+                    this.props.match.params.name,
+                    { headers: { Authorization: localStorage.getItem("token") } })
         .then(response =>{
             if(this._isMouted){
                 this.setState({name: response.data[0].name,
@@ -30,17 +33,18 @@ class Graphics extends Component {
     }
 	componentDidMount() {
         this._isMouted=true;
-        this.setSituation();
-    }
-    componentDidUpdate(){
-        this.setSituation();
+        setInterval(() => {
+            if(this._isMouted)
+                this.setSituation();
+        }, 1000);
     }
 
     componentWillUnmount(){
         this._isMouted=false;
     }
+
 	render() {
-        let dps = this.state.situations.map((situation, index)=>{
+        let dps = this.state.situations.map(situation=>{
             let date = new Date(situation.date);
             return {x: date, y: situation.downorup, toolTipContent: situation.response}
         });
@@ -77,15 +81,7 @@ class Graphics extends Component {
                 </div>
             </div>
 		);
-	}
-   
-    
-   
-    
-
-    
-
-    
+	}    
 }
 
 export default Graphics;

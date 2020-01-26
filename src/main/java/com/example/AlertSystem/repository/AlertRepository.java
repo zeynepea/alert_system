@@ -13,7 +13,6 @@ public interface AlertRepository extends JpaRepository<Alert, Long> {
 
     List<Alert> findByName(String name);
 
-    @Transactional
     Long deleteByName(String firstName);
 
     @Query("select x.name from Alert x")

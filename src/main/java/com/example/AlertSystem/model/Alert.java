@@ -1,6 +1,9 @@
 package com.example.AlertSystem.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.validator.constraints.URL;
 import org.springframework.http.HttpMethod;
 
@@ -22,7 +25,6 @@ public class Alert {
     private Long id;
 
     @NotBlank(message = "name is mandotory")
-    @Column(unique = true)
     private String name;
 
     @URL
@@ -41,7 +43,8 @@ public class Alert {
     private Long timeLeft;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name="alert_id")
+    @JoinColumn(name = "alert_id")
     private List<Situation> situations;
+
 
 }

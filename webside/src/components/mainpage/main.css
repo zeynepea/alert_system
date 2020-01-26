@@ -29,3 +29,17 @@
     display: table;
     clear: both;
   }
+
+  .head {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    font-family: Helvetica;
+    padding: 1%;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 25px;
+    margin-top:  1%;
+    margin-bottom: 0.5%;
+    margin-left: 1%;
+    margin-right: 1%;
+  }

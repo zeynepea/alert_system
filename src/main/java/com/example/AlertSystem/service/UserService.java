@@ -1,6 +1,7 @@
 package com.example.AlertSystem.service;
 
 
+import com.example.AlertSystem.model.Alert;
 import com.example.AlertSystem.model.AlertSystemUser;
 import com.example.AlertSystem.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +21,10 @@ public class UserService {
 
     public List<AlertSystemUser> getUsers(){
         return userRepository.findAll();
+    }
+
+    public AlertSystemUser getUserByUsername(final String username){
+        return userRepository.findByUsername(username);
     }
 
 

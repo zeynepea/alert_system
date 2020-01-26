@@ -15,7 +15,10 @@ class AlertLinks extends Component {
     }
     
     getNames(){
-        axios.get('http://localhost:8080/getNames').then(response=>{
+        axios.get('http://localhost:8080/alerts/getNames/' + 
+                    localStorage.getItem("username"),
+                    { headers: { Authorization: localStorage.getItem("token") } })
+            .then(response=>{
             if(this._isMouted){
                 this.setState({names: [...response.data],
                                start: true});
@@ -24,31 +27,36 @@ class AlertLinks extends Component {
             console.log(err);
         });
     }
+
     componentDidMount(){
         this._isMouted = true;
-        this.getNames();
-    }
-    componentDidUpdate(){
-        this.getNames();
+        setInterval(() => {
+            if(this._isMouted)
+                this.getNames();
+        }, 1000);
     }
 
     componentWillUnmount(){
         this._isMouted = false;
     }
 
-    delete(name){
-        axios.delete('http://localhost:8080/delete/'+name).then(response =>{
+    delete(alertName){
+        axios.delete('http://localhost:8080/delete/'+
+                    localStorage.getItem("username") + '/' +
+                    alertName
+                    ,{ headers: { Authorization: localStorage.getItem("token") } })
+             .then(response =>{
             console.log(response);
         })
     }
   
-  render() {
+    render() {
     let namesMap = this.state.names.map((nam, index) => {
         return (
           <tr className="table-row" key={index} >
             <td >
                 <h1  >
-                   <Link to={{pathname: '/alerts/'+nam}}  className="table-data"  >{nam}</Link>
+                   <Link to={{pathname: '/'+localStorage.getItem("username")+'/'+nam}}  className="table-data"  >{nam}</Link>
                 </h1>
             </td>
             <td className="forbutton" ><button className="Button" onClick={() => this.delete(nam)} >X</button></td>

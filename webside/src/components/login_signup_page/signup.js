@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class Signup extends Component {
   
@@ -7,14 +8,7 @@ class Signup extends Component {
         this.state = {username: '',
                       password: '',
                       email: '',
-                      error: '',                     //error text if invalid url or already exists name 
-                                                     //or period 0. 
-                      ifInvalid: "",                 //to make url input box red
-                                                     //if invalid url  
-                      ifNameExists: "",              //to make name input box red
-                                                     //if name already exists
-                      ifPeriodZero: "",              //to make period input box red
-                                                     //if period is 0
+                      error: '',                    
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,20 +18,31 @@ class Signup extends Component {
         this.setState({
           [event.target.name] : event.target.value
         });
-        
       }
     
       handleSubmit(event) {
         event.preventDefault();
-        
+        axios.post('http://localhost:8080/users/signup',{
+          username: this.state.username,
+          password: this.state.password,
+          email: this.state.email,
+          active: 1,
+          roles: "USER",
+          permissions:"",
+          alerts: [],
+        }).then(message=>{
+          this.setState({error : message.data });
+          console.log(message.data);
+        }).catch(err => {
+          this.setState({error: err.data})
+        })
       }
       render() {
         
         return (
         <div className = "Form">
           <form onSubmit={this.handleSubmit} >
-            <div className= "custom"
-                 style = {{border: this.state.ifNameExists}}>
+            <div className= "custom">
               <label>
                 Username: 
                 <input type="text"
@@ -47,12 +52,12 @@ class Signup extends Component {
                 required/>
               </label>
             </div>
-            <div className= "custom" 
-                   style = {{border: this.state.ifInvalid}}>
+            <div className= "custom" >
               <label  >
                 Password: 
-                <input type="text"              
+                <input type="password"              
                     name = "password"
+                    autoComplete="off"
                     value={this.state.password} 
                     onChange={this.handleChange}
                     required/>
